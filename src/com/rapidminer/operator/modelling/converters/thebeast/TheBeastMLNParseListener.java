@@ -24,7 +24,7 @@ public class TheBeastMLNParseListener extends TheBeastMLNGrammarBaseListener {
 			throw new MLNException(e.getMessage(), e);
 		}
 	}
-
+	
 	public MLNModel getMlnModel() {
 		return mlnModel;
 	}
