@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tns:fileTypes xmlns:tns="http://xsd.configuration.modelling.operator.rapidminer.com/MLNFileTypeSpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mln.com/MLNFileTypeSpecification ../../../../../src/com/rapidminer/operator/modelling/configuration/xsd/MLNFileTypeSpecification.xsd ">
+  <tns:fileType  key="Alchemy" converter="com.rapidminer.operator.modelling.converters.alchemy.AlchemyMLNConverter" 
+      nonEvidenceAtomFileType="false" queryAtomFileType="false"
+      supportsLEConstraintConversion="true" supportsUnsupportedConstraintRemoval="true"/>
+   <tns:fileType  key="Rockit" converter="com.rapidminer.operator.modelling.converters.rockit.RockitMLNConverter" 
+      nonEvidenceAtomFileType="false" queryAtomFileType="false"
+      supportsLEConstraintConversion="false" supportsUnsupportedConstraintRemoval="false"/>
+    <tns:fileType  key="Tuffy" converter="com.rapidminer.operator.modelling.converters.tuffy.TuffyMLNConverter" 
+      nonEvidenceAtomFileType="true" queryAtomFileType="true"
+      supportsLEConstraintConversion="false" supportsUnsupportedConstraintRemoval="true"/>
+</tns:fileTypes>

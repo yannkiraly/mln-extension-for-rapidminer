@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<operators name="template" version="5.0" docbundle="com/rapidminer/resources/i18n/OperatorsDocMLNExtension">
+   <group key="">
+      <group key = "modeling">
+          <group key ="mln">
+              <operator>
+                  <class>com.rapidminer.operator.modelling.MLNLearnOperator</class>
+                  <key>mln_learn</key>
+              </operator>
+              <operator>
+                  <class>com.rapidminer.operator.modelling.MLNInferOperator</class>
+                  <key>mln_infer</key>
+              </operator>
+               <operator>
+                  <class>com.rapidminer.operator.modelling.MLNRemoveVariableWeightsOperator</class>
+                  <key>mln_remove_var_weights</key>
+              </operator>
+              <operator>
+                  <class>com.rapidminer.operator.modelling.MLNReinsertVariableWeightsOperator</class>
+                  <key>mln_reinsert_var_weights</key>
+              </operator>
+              <operator>
+                  <class>com.rapidminer.operator.modelling.MLNIntegrateRuleModelsOperator</class>
+                  <key>mln_integrate_rule_models</key>
+              </operator>
+          </group>
+      </group>
+      <group key = "import">
+          <group key = "data">
+              <group key = "mln">
+              	<operator>
+              		<class>com.rapidminer.operator.modelling.MLNRuleFileReaderOperator</class>
+              		<key>mln_rule_file_reader</key>
+              	</operator>
+              	<operator>
+              		<class>com.rapidminer.operator.modelling.MLNEvidenceFileReaderOperator</class>
+              		<key>mln_evidence_file_reader</key>
+              	</operator>
+              	<operator>
+              		<class>com.rapidminer.operator.modelling.MLNQueryFileReaderOperator</class>
+              		<key>mln_query_file_reader</key>
+              	</operator>
+              	<operator>
+              		<class>com.rapidminer.operator.modelling.MLNInferenceResultFileReaderOperator</class>
+              		<key>mln_infres_file_reader</key>
+              	</operator>
+              </group>
+          </group>
+      </group>
+   </group>
+</operators>

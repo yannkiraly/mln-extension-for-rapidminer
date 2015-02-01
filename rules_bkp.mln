@@ -1,0 +1,60 @@
+
+
+
+
+
+
+
+
+blindWord_o1(Word1)
+blindWord_o2(Word2)
+sub_o1(Concept1,Concept1)
+sub_o2(Concept2,Concept2)
+*has3Word_o2(Label2,Word2,Word2,Word2)
+*has2Word_o1(Label1,Word1,Word1)
+*has3Word_o1(Label1,Word1,Word1,Word1)
+*wordSim(Word1,Word2,float_)
+*hasLabel_o1(Concept1,Label1)
+wordEQ(Word1,Word2)
+dis_o2(Concept2,Concept2)
+labelEQ(Label1,Label2)
+dis_o1(Concept1,Concept1)
+conceptEQ(Concept1,Concept2)
+*has1Word_o2(Label2,Word2)
+*has1Word_o1(Label1,Word1)
+*has2Word_o2(Label2,Word2,Word2)
+*hasLabel_o2(Concept2,Label2)
+
+|c_o1| conceptEQ(c_o1, c_o2) <= 1.
+|c_o2| conceptEQ(c_o1, c_o2) <= 1.
+! has1Word_o1(v0,v1) v ! has1Word_o2(v2,v3) v ! wordEQ(v1,v3) v labelEQ(v0,v2).
+! labelEQ(v0,v1) v ! has1Word_o1(v0,v2) v ! has1Word_o2(v1,v3) v wordEQ(v2,v3).
+! has2Word_o1(v0,v1,v2) v ! has2Word_o2(v3,v4,v5) v ! wordEQ(v1,v4) v ! wordEQ(v2,v5) v labelEQ(v0,v3).
+! labelEQ(v0,v1) v ! has2Word_o1(v0,v2,v3) v ! has2Word_o2(v1,v4,v5) v wordEQ(v2,v4).
+! labelEQ(v0,v1) v ! has2Word_o1(v0,v2,v3) v ! has2Word_o2(v1,v4,v5) v wordEQ(v3,v5).
+! has2Word_o1(v0,v1,v2) v ! has1Word_o2(v3,v4) v ! wordEQ(v2,v4) v ! blindWord_o1(v1) v labelEQ(v0,v3).
+! labelEQ(v0,v1) v ! has2Word_o1(v0,v2,v3) v ! has1Word_o2(v1,v4) v wordEQ(v3,v4).
+! labelEQ(v0,v1) v ! has2Word_o1(v0,v2,v3) v ! has1Word_o2(v1,v4) v blindWord_o1(v2).
+! has1Word_o1(v0,v1) v ! has2Word_o2(v2,v3,v4) v ! wordEQ(v1,v4) v ! blindWord_o2(v3) v labelEQ(v0,v2).
+! labelEQ(v0,v1) v ! has1Word_o1(v0,v2) v ! has2Word_o2(v1,v3,v4) v wordEQ(v2,v4).
+! labelEQ(v0,v1) v ! has1Word_o1(v0,v2) v ! has2Word_o2(v1,v3,v4) v blindWord_o2(v5).
+! has1Word_o1(v0,v1) v ! has3Word_o2(v2,v3,v4,v5) v ! labelEQ(v0,v2).
+! has2Word_o1(v0,v1,v2) v ! has3Word_o2(v3,v4,v5,v6) v ! labelEQ(v0,v3).
+! has3Word_o1(v0,v1,v2,v3) v ! has1Word_o2(v4,v5) v ! labelEQ(v0,v4).
+! has3Word_o1(v0,v1,v2,v3) v ! has2Word_o2(v4,v5,v6) v ! labelEQ(v0,v4).
+! has3Word_o1(v0,v1,v2,v3) v ! has3Word_o2(v4,v5,v6,v7) v ! wordEQ(v1,v5) v ! wordEQ(v2,v6) v ! wordEQ(v3,v7) v labelEQ(v0,v4).
+! labelEQ(v0,v1) v ! has3Word_o1(v0,v2,v3,v4) v ! has3Word_o2(v1,v5,v6,v7) v wordEQ(v2,v5).
+! labelEQ(v0,v1) v ! has3Word_o1(v0,v2,v3,v4) v ! has3Word_o2(v1,v5,v6,v7) v wordEQ(v3,v6).
+! labelEQ(v0,v1) v ! has3Word_o1(v0,v2,v3,v4) v ! has3Word_o2(v1,v5,v6,v7) v wordEQ(v4,v7).
+! conceptEQ(v0,v1) v ! conceptEQ(v2,v3) v ! sub_o1(v0,v2) v ! dis_o2(v1,v3).
+! conceptEQ(v0,v1) v ! conceptEQ(v2,v3) v ! dis_o1(v0,v2) v ! sub_o2(v1,v3).
+! sub_o1(v0,v1) v ! sub_o1(v1,v2) v sub_o1(v0,v2).
+! sub_o2(v0,v1) v ! sub_o2(v1,v2) v sub_o2(v0,v2).
+! sub_o1(v0,v1) v ! dis_o1(v0,v2) v dis_o1(v1,v2).
+! sub_o2(v0,v1) v ! dis_o2(v0,v2) v dis_o2(v1,v2).
+-18.7891 conceptEQ(v0,v1)
+-10.4006 blindWord_o1(v0)
+-16.1898 blindWord_o2(v0)
+! labelEQ(v0,v1) v ! hasLabel_o1(v2,v0) v ! hasLabel_o2(v3,v1) v conceptEQ(v2,v3).
+! conceptEQ(v0,v1) v ! hasLabel_o1(v0,v2) v ! hasLabel_o2(v1,v3) v labelEQ(v2,v3).
+sim: ! wordSim(w1,w2,sim) v wordEQ(w1,w2)

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<tns:mlnEngines xmlns:tns="http://xsd.configuration.modelling.operator.rapidminer.com/MLNEngineSpecification" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.mln.com/OptionalParameterSpecification ../../../../../src/com/rapidminer/operator/modelling/configuration/xsd/OptionalParameterSpecification.xsd ">
+    <tns:mlnEngine key="Alchemy" fileType="Alchemy" 
+        inferenceAdapter="com.rapidminer.operator.modelling.adapters.alchemy.AlchemyInferenceAdapter" 
+        learningAdapter="com.rapidminer.operator.modelling.adapters.alchemy.AlchemyLearningAdapter"
+        queryAtomsInRules="false"
+        multipleEvidenceFilesInference="true"
+        multipleEvidenceFilesLearning="true"
+        variableWeights = "Neither"
+        plusNotation="true">
+        <tns:learningTypes>
+            <tns:learningType key="Generative"/>
+            <tns:learningType key="Discriminative"/>
+        </tns:learningTypes>
+        <tns:inferenceTypes>
+            <tns:inferenceType key="MAP"/>
+            <tns:inferenceType key="Marginal"/>
+        </tns:inferenceTypes>
+        <tns:optionalParameters>
+            <tns:optionalParameter key="Maximum Steps"/>
+        </tns:optionalParameters>
+    </tns:mlnEngine>
+    <tns:mlnEngine key="Rockit" fileType="Rockit" 
+        inferenceAdapter="com.rapidminer.operator.modelling.adapters.rockit.RockitInferenceAdapter" 
+        learningAdapter="com.rapidminer.operator.modelling.adapters.rockit.RockitLearningAdapter"
+        queryAtomsInRules="true"
+        multipleEvidenceFilesInference="true"
+        multipleEvidenceFilesLearning="false"
+        variableWeights = "Both"
+        plusNotation="false">
+         <tns:learningTypes>
+            <tns:learningType key="Discriminative"/>
+        </tns:learningTypes>
+        <tns:inferenceTypes>
+            <tns:inferenceType key="MAP"/>
+            <tns:inferenceType key="Marginal"/>
+        </tns:inferenceTypes>
+        <tns:optionalParameters>
+            <tns:optionalParameter key="Iterations"/>
+        </tns:optionalParameters>
+    </tns:mlnEngine>
+    <tns:mlnEngine key="Tuffy" fileType="Tuffy" 
+        inferenceAdapter="com.rapidminer.operator.modelling.adapters.tuffy.TuffyInferenceAdapter" 
+        learningAdapter="com.rapidminer.operator.modelling.adapters.tuffy.TuffyLearningAdapter"
+        queryAtomsInRules="true"
+        multipleEvidenceFilesInference="true"
+        multipleEvidenceFilesLearning="true"
+        variableWeights = "Inference"
+        plusNotation="false">
+        <tns:learningTypes>
+            <tns:learningType key="Discriminative"/>
+        </tns:learningTypes>
+        <tns:inferenceTypes>
+            <tns:inferenceType key="MAP"/>
+            <tns:inferenceType key="Marginal"/>
+        </tns:inferenceTypes>
+        <tns:optionalParameters>
+            <tns:optionalParameter key="Maximum Iterations"/>
+            <tns:optionalParameter key="WalkSat Random Step Probability"/>
+        </tns:optionalParameters>
+    </tns:mlnEngine>
+</tns:mlnEngines>

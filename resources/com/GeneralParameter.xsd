@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"  
+		   targetNamespace="http://xsd.configuration.modelling.operator.rapidminer.com/GeneralParameter" 
+		   xmlns:tns="http://xsd.configuration.modelling.operator.rapidminer.com/GeneralParameter" 
+		   elementFormDefault="qualified">
+
+<xs:element name= "generalParameters">
+<xs:complexType>
+	<xs:sequence>
+		<xs:element name="generalParameter" minOccurs="0" maxOccurs="unbounded">
+			<xs:complexType>
+				<xs:attribute name="key" type="xs:string" use="required"/>
+				<xs:attribute name="value" type="xs:string" use="required"/>	
+				<xs:attribute name="topic" type="xs:string" use="required"/>
+				<xs:attribute name="description" type="xs:string" use="required"/>
+			</xs:complexType>
+		</xs:element>
+	</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+</xs:schema>

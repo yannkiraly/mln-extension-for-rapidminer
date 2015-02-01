@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xsd.configuration.modelling.operator.rapidminer.com/MLNEngineSpecification" xmlns:tns="http://xsd.configuration.modelling.operator.rapidminer.com/MLNEngineSpecification" elementFormDefault="qualified">
+
+<xs:element name="mlnEngines">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="mlnEngine" type="tns:mlnEngine" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+<xs:complexType name="mlnEngine">
+	<xs:sequence>
+		<xs:element name="learningTypes" minOccurs="0" maxOccurs="1">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="learningType" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:attribute name="key" type="xs:string"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+		<xs:element name="inferenceTypes" minOccurs="0" maxOccurs="1">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="inferenceType" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:attribute name="key" type="xs:string"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+		<xs:element name="optionalParameters" minOccurs="0" maxOccurs="1">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="optionalParameter" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:attribute name="key" type="xs:string"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+	</xs:sequence>
+	<xs:attribute name="key" type="xs:string" use="required"/>
+	<xs:attribute name="fileType" type="xs:string" use="required"/>
+	<xs:attribute name="inferenceAdapter" type="xs:string" use="required"/>
+	<xs:attribute name="learningAdapter" type="xs:string" use="required"/>
+	<xs:attribute name ="queryAtomsInRules" type="xs:boolean" use="required"/>
+	<xs:attribute name="multipleEvidenceFilesInference" type="xs:boolean" use="required"/>
+	<xs:attribute name="multipleEvidenceFilesLearning" type="xs:boolean" use="required"/>
+	<xs:attribute name="variableWeights" use="required">
+		<xs:simpleType>
+		    <xs:restriction base="xs:string">
+		      <xs:enumeration value="Learning"/>
+		      <xs:enumeration value="Inference"/>
+		      <xs:enumeration value="Both"/>
+		      <xs:enumeration value="Neither"/>
+		    </xs:restriction>
+  		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name = "plusNotation" type="xs:boolean" use="required"/>
+	<xs:attribute name ="exclConstraintConversion" type="xs:boolean" use="required"/>
+</xs:complexType>
+</xs:schema>

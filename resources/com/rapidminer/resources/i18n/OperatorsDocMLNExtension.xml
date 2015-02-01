@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<operatorHelp lang="en_EN">
+    <!--  This is an example how to specify the description of operators and the translation of it's key identifier
+    to names. 
+
+   <operator>
+      <name>SingleTextInput</name>
+      <synopsis>Generates word vectors from a single text.</synopsis>
+      <help />
+   </operator>
+   <operator>
+      <name>TextObjectWriter</name>
+      <synopsis>Writes a textobject into a file.</synopsis>
+      <help>This operator writes a given textObject into a file. It might be specified if an existing file with the same name should be overwritten.</help>
+   </operator>
+
+    This is how group ids are translated:
+    
+   <group>
+      <key>text_processing</key>
+      <name>Text Processing</name>
+   </group>
+
+    -->
+	<group>
+	    <key>mln</key>
+	    <name>Markov Logic Networks</name>
+	</group>
+	
+	<operator>
+	    <key>mln_rule_file_reader</key>
+	    <name>Read MLN Rule File</name>
+	    <synposis>Reads MLN rule files.</synposis>
+	    <help />
+	</operator>
+	
+	<operator>
+	    <key>mln_evidence_file_reader</key>
+	    <name>Read MLN Evidence File</name>
+	    <synposis>Reads MLN evidence files.</synposis>
+	    <help />
+	</operator>
+	
+	<operator>
+	    <key>mln_remove_var_weights</key>
+	    <name>Remove variable weights</name>
+	    <synopsis>Removes variable weights</synopsis>
+	</operator>
+	
+	<operator>
+	    <key>mln_reinsert_var_weights</key>
+	    <name>Reinsert variable weights</name>
+	    <synopsis>Reinserts variable weights</synopsis>
+	</operator>
+	
+	
+	<operator>
+	    <key>mln_query_file_reader</key>
+	    <name>Read MLN Query File</name>
+	    <synposis>Reads MLN query files.</synposis>
+	    <help />
+	</operator>
+	
+	<operator>
+	    <key>mln_infres_file_reader</key>
+	    <name>Read MLN Inference Result File</name>
+	    <synposis>Reads MLN inference result files.</synposis>
+	    <help />
+	</operator>
+	
+	<operator>
+	    <key>mln_learn</key>
+	    <name>MLN Learning</name>
+	    <synposis>Learns weights and structure for MLN.</synposis>
+	    <help />
+	</operator>
+	
+	<operator>
+	    <key>mln_infer</key>
+	    <name>MLN Inference</name>
+	    <synopsys>Infers probabilities from an MLN.</synopsys>
+	</operator>
+	
+	<operator>
+	    <key>mln_integrate_rule_models</key>
+	    <name>MLN Rule Model Integration</name>
+	    <synopsys>Integrates a set of rule models into one.</synopsys>
+	</operator>
+	
+</operatorHelp>

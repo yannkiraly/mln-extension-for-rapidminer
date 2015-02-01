@@ -1,0 +1,62 @@
+<project name="RapidMiner Extension Template" default="install">
+	<description>Build file for the RapidMiner Template extension</description>
+	
+	<presetdef name="javac">
+	    <javac includeantruntime="false">
+	    	<classpath>
+			<pathelement path="/usr/local/lib/antlr-4.2-complete.jar"/>
+			<pathelement path="/Users/yann/Documents/workspace/RapidMiner_MLN_Extension/lib/commons-beanutils-1.9.2/commons-beanutils-1.9.2.jar"/>
+			<pathelement path="/Users/yann/Documents/workspace/RapidMiner_Unuk/lib"/>
+		</classpath>
+	    </javac>
+	  </presetdef>
+	
+	<property name="rm.dir" location="../RapidMiner_Unuk" />
+
+	<property name="build.build" location="build" />
+	<property name="build.resources" location="resources" />
+	<property name="build.lib" location="lib" />
+
+	<property name="check.sources" location = "src" />
+	
+	<property name="javadoc.targetDir" location="javadoc" />
+
+	<property name="extension.name" value="MLNExtension" />
+	<property name="extension.name.long" value="Markov Logic Network Learning and Inference Extension" />
+	<property name="extension.namespace" value="mlnExtension" />
+    <property name="extension.vendor" value="" />
+    <property name="extension.admin" value="" />
+    <property name="extension.url" value="" />
+
+
+	<property name="extension.needsVersion" value="5.3" />
+	<property name="extension.dependencies" value="" />
+		
+	<!-- Uncomment if the extension actually depends on other extensions -->
+	<!-- property name="build.dependentExtensions" value="true" /> -->
+
+	<property name="extension.initClass" value="com.rapidminer.PluginInitMLNExtension" />
+	<property name="extension.objectDefinition" value="/com/rapidminer/resources/ioobjectsMLNExtension.xml" />
+	<property name="extension.operatorDefinition" value="/com/rapidminer/resources/OperatorsMLNExtension.xml" />
+	<property name="extension.parseRuleDefinition" value="/com/rapidminer/resources/parserulesMLNExtension.xml" />
+	<property name="extension.groupProperties" value="/com/rapidminer/resources/groupsMLNExtension.properties" />
+	<property name="extension.errorDescription" value="/com/rapidminer/resources/i18n/ErrorsMLNExtension.properties" />
+	<property name="extension.userErrors" value="/com/rapidminer/resources/i18n/UserErrorMessagesMLNExtension.properties" />
+	<property name="extension.guiDescription" value="/com/rapidminer/resources/i18n/GUIMLNExtension.properties" />
+
+
+	<!-- Src files -->
+	<path id="build.sources.path">
+		<dirset dir="src">
+			<include name="**" />
+		</dirset>
+	</path>
+	<fileset dir="src" id="build.sources">
+		<include name="**/*.java" />
+	</fileset>
+	<fileset id="build.dependentExtensions" dir="..">
+		<exclude name="**/*"/>
+	</fileset>
+
+	<import file="${rm.dir}/build_extension.xml" />
+</project>

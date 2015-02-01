@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xsd.configuration.modelling.operator.rapidminer.com/OptionalParameterSpecification" xmlns:tns="http://xsd.configuration.modelling.operator.rapidminer.com/OptionalParameterSpecification" elementFormDefault="qualified">
+
+<xs:element name="optionalParameters">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="optionalParameter" type="tns:optionalParameter" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+<xs:complexType name="optionalParameter">
+	<xs:sequence>
+		<xs:element name="mlnEngines"  minOccurs="1" maxOccurs="1">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="mlnEngine" minOccurs="1" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:attribute name="key" type="xs:string"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+		<xs:element name="categories" minOccurs="0" maxOccurs="1">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="category" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:attribute name ="label" type="xs:string"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+		<xs:element name="parameterConditions" minOccurs="0" maxOccurs="1">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="parameterCondition" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:attribute name="class" type="xs:string"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+	</xs:sequence>
+	<xs:attribute name="key" type="xs:string" use="required"/>
+	<xs:attribute name="description" type="xs:string" use="required"/>
+	<xs:attribute name="flag" type="xs:string"/>
+	<xs:attribute name="numberOfArguments" type="xs:int"  use="required"/>
+	<xs:attribute name="inferenceArgument" type="xs:boolean" use="required"/>
+	<xs:attribute name="learnArgument" type="xs:boolean" use="required"/>
+	<xs:attribute name="expert" type="xs:boolean" use="required"/>
+	<xs:attribute name="minInt" type="xs:int"/>
+	<xs:attribute name="maxInt" type="xs:int"/>
+	<xs:attribute name="defaultCategoryIndex" type="xs:int"/>
+	<xs:attribute name="defaultInt" type="xs:int"/>
+	<xs:attribute name="defaultBoolean" type="xs:boolean"/>
+	<xs:attribute name="parameterType" use="required">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="INT"/>
+				<xs:enumeration value="STRING"/>
+				<xs:enumeration value="CATEGORY"/>
+				<xs:enumeration value="LIST"/>
+				<xs:enumeration value="BOOLEAN"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+</xs:complexType>
+</xs:schema>

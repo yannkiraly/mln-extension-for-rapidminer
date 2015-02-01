@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<tns:optionalParameters xmlns:tns="http://xsd.configuration.modelling.operator.rapidminer.com/OptionalParameterSpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mln.com/OptionalParameterSpecification ../../../../../src/com/rapidminer/operator/modelling/configuration/xsd/OptionalParameterSpecification.xsd ">
+  <tns:optionalParameter key="Maximum Iterations" expert="true" parameterType="INT" defaultInt="20" description="Maximum learning iterations." 
+      flag="-dMaxIter" inferenceArgument="false" learnArgument="true" minInt="0" maxInt="10000" numberOfArguments="1">
+    <tns:mlnEngines>
+      <tns:mlnEngine key="Tuffy"/>
+    </tns:mlnEngines>
+  </tns:optionalParameter>
+   <tns:optionalParameter key="Don't break hard rules" expert="true" parameterType="BOOLEAN" 
+       description="Don't break hard rules." 
+      flag="-dontBreak" inferenceArgument="true" learnArgument="true" defaultBoolean="false" numberOfArguments="0">
+    <tns:mlnEngines>
+      <tns:mlnEngine key="Tuffy"/>
+    </tns:mlnEngines>
+  </tns:optionalParameter>
+  <tns:optionalParameter key="MLE Inference" expert="true" parameterType="BOOLEAN" 
+       description="Run MLE inference." 
+      flag="-mle" inferenceArgument="true" learnArgument="false" defaultBoolean="false" numberOfArguments="0">
+    <tns:mlnEngines>
+      <tns:mlnEngine key="Tuffy"/>
+    </tns:mlnEngines>
+  </tns:optionalParameter>
+  <tns:optionalParameter key="Marginal Inference Type" expert="true" parameterType="CATEGORY" 
+       description="Choose the marginal inference algorithm to use." 
+      flag="" inferenceArgument="true" learnArgument="false" numberOfArguments="1" defaultCategoryIndex="1">
+     <tns:mlnEngines>
+      <tns:mlnEngine key="Alchemy"/>
+    </tns:mlnEngines>
+    <tns:categories>
+ 	  <tns:category label="Gibbs Sampling"/>
+ 	   <tns:category label="MC-SAT"/>
+ 	</tns:categories>
+    <tns:parameterConditions>
+        <tns:parameterCondition class="com.rapidminer.condition.mln.OnlyForMarginalInferenceCondition"/>
+    </tns:parameterConditions>
+  </tns:optionalParameter>
+  <tns:optionalParameter key="Maximum Steps" expert="true" parameterType="INT" defaultInt="20" description="Maximum MCMC Sampling Steps." 
+      flag="-maxSteps" inferenceArgument="true" learnArgument="true" minInt="0" maxInt="10000" numberOfArguments="1">
+    <tns:mlnEngines>
+      <tns:mlnEngine key="Alchemy"/>
+    </tns:mlnEngines>
+  </tns:optionalParameter>
+  <tns:optionalParameter key="Maximum Seconds" expert="true" parameterType="INT" defaultInt="20" description="Maximum seconds to run." 
+      flag="-maxSeconds" inferenceArgument="true" learnArgument="true" minInt="0" maxInt="10000" numberOfArguments="1">
+    <tns:mlnEngines>
+      <tns:mlnEngine key="Alchemy"/>
+    </tns:mlnEngines>
+  </tns:optionalParameter>
+  <tns:optionalParameter key="Iterations" expert="true" parameterType="INT" defaultInt="50" description="Number of rounds." 
+      flag="-iterations" inferenceArgument="true" learnArgument="true" minInt="0" maxInt="10000" numberOfArguments="1">
+    <tns:mlnEngines>
+      <tns:mlnEngine key="Rockit"/>
+    </tns:mlnEngines>
+  </tns:optionalParameter>
+  <tns:optionalParameter key="Maximum memory use" expert="true" parameterType="INT" defaultInt="512" 
+      description="Maximum amount of memory to use in MB" 
+      flag="-Xmx" inferenceArgument="true" learnArgument="true" minInt="0" maxInt="10000" numberOfArguments="1">
+    <tns:mlnEngines>
+      <tns:mlnEngine key="Rockit"/>
+      <tns:mlnEngine key="Tuffy"/>
+    </tns:mlnEngines>
+  </tns:optionalParameter>
+    <tns:optionalParameter key="Verbosity" expert="true" parameterType="INT" defaultInt="0" 
+      description="Verbosity level" 
+      flag="-verbose" inferenceArgument="true" learnArgument="true" minInt="0" maxInt="3" numberOfArguments="1">
+    <tns:mlnEngines>
+      <tns:mlnEngine key="Tuffy"/>
+    </tns:mlnEngines>
+  </tns:optionalParameter>
+    <tns:optionalParameter key="Maximum number of samples" expert="true" parameterType="INT" defaultInt="100" 
+      description="Maximum number of samples for MC-SAT" 
+      flag="-mcsatSamples" inferenceArgument="true" learnArgument="true" minInt="0" maxInt="10000" numberOfArguments="1">
+    <tns:mlnEngines>
+      <tns:mlnEngine key="Tuffy"/>
+    </tns:mlnEngines>
+  </tns:optionalParameter>
+    <tns:optionalParameter key="Multiple databases" expert="true" parameterType="BOOLEAN" 
+      description="Treat multiple databases as separate" 
+      flag="-multipleDatabases" inferenceArgument="true" learnArgument="true" numberOfArguments="0">
+    <tns:mlnEngines>
+        <tns:mlnEngine key="Alchemy"/>
+    </tns:mlnEngines>
+  </tns:optionalParameter>
+</tns:optionalParameters>

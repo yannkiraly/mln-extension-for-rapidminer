@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:generalParameters xmlns:tns="http://xsd.configuration.modelling.operator.rapidminer.com/GeneralParameter" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://xsd.configuration.modelling.operator.rapidminer.com/GeneralParameter ../../../../../src/GeneralParameter.xsd ">
+  
+  <tns:generalParameter key="Temporary File Folder" topic="General"
+     value=""
+     description="Folder for temporary files."/>
+  
+  <tns:generalParameter key="Alchemy Executable Folder" topic="Alchemy" 
+      value=""
+  	description="Folder containing the Alchemy executables."/>
+  
+  <tns:generalParameter key="Alchemy Inference Executable" topic="Alchemy"
+      value="infer" description="Name of the Alchemy inference executable."/>
+  
+  <tns:generalParameter key="Alchemy Weight Learning Executable" topic="Alchemy"
+      value="learnwts" description="Name of the Alchemy weight learning executable."/>
+  
+  <tns:generalParameter key="Rockit JAR Folder" topic="Rockit"
+      value=""
+      description="Folder containing the Rockit jar."/>
+  
+  <tns:generalParameter key="Rockit JAR" topic="Rockit"
+      value="rockit.jar"
+      description="Name of the Rockit jar."/>
+  
+  <tns:generalParameter key="Rockit Configuration File" topic="Tuffy"
+      value="rockit.properties"
+      description="Name of the Rockit configuration file."/>
+  
+  <tns:generalParameter key="Tuffy JAR Folder" topic="Tuffy"
+      value=""
+      description="Folder containing the Tuffy jar."/>
+  
+  <tns:generalParameter key="Tuffy JAR" topic="Tuffy"
+      value="tuffy.jar"
+      description="Name of the Tuffy jar."/>
+  
+  <tns:generalParameter key="Tuffy Configuration File" topic="Tuffy"
+      value="tuffy.conf"
+       description="Name of the Tuffy configuration file."/>
+
+</tns:generalParameters>
